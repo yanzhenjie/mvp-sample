@@ -1,0 +1,25 @@
+apply plugin: rootProject.ext.plugins.library
+apply plugin: rootProject.ext.plugins.butterKnife
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.defaultConfig.minSdkVersion
+        targetSdkVersion rootProject.ext.android.defaultConfig.targetSdkVersion
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile rootProject.ext.dependencies.appCompat
+
+    compile rootProject.ext.dependencies.butterKnife
+    annotationProcessor rootProject.ext.dependencies.butterKnifeCompiler
+
+    testCompile rootProject.ext.dependencies.junit
+    androidTestCompile(rootProject.ext.dependencies.expressoCore) {
+        exclude group: "com.android.support", module: "support-annotations"
+    }
+}

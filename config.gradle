@@ -1,0 +1,33 @@
+ext {
+    plugins = [
+            library    : 'com.android.library',
+            application: 'com.android.application',
+            butterKnife: 'com.jakewharton.butterknife',
+    ]
+
+    android = [
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.3",
+
+            defaultConfig    : [
+                    applicationId   : "com.yanzhenjie.mvp.sample",
+                    minSdkVersion   : 14,
+                    targetSdkVersion: 26,
+                    versionCode     : 1,
+                    versionName     : "1.0.0",
+                    runner          : "android.support.test.runner.AndroidJUnitRunner"
+            ]
+    ]
+
+    dependencies = [
+            junit              : 'junit:junit:4.12',
+            expressoCore       : 'com.android.support.test.espresso:espresso-core:2.2.2',
+
+            appCompat          : 'com.android.support:appcompat-v7:26.1.0',
+            design             : 'com.android.support:design:26.1.0',
+
+            butterKnife        : 'com.jakewharton:butterknife:8.8.1',
+            butterKnifeCompiler: 'com.jakewharton:butterknife-compiler:8.8.1',
+            swipeRecyclerView  : 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+    ]
+}
