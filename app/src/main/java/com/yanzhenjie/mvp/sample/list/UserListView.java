@@ -88,6 +88,7 @@ public class UserListView extends Contract.UserListView {
 
     @Override
     public void addDataList(Page page) {
+        mAdapter.notifyDataSetChanged();
         mRecyclerView.loadMoreFinish(false, page.getCurrentPage() < page.getPageCount());
     }
 }
